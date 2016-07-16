@@ -15,7 +15,8 @@
         //public ConstantClient(){};
 
 
-
+        public ConstantClient() {
+        }
 
         public ConstantClient(String name, String phone, Car car, int place) {
             super(name, phone, car);

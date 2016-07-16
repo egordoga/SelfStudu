@@ -33,7 +33,7 @@ public class Area {
             place[i] = new Area(i+1, 2, true);
         }
         for (int i = 40; i < 45; i++) {
-            place[i] = new Area(i+1, 3, true);
+            place[i] = new Area(i+1, 3, false);
         }
         for (int i = 45; i < 50; i++) {
             place[i] = new Area(i+1, 4, true);
