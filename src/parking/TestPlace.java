@@ -7,6 +7,6 @@ public class TestPlace {
     public static void main(String[] args) {
         Area area = new Area();
         area.setPlace();
-        area.showFree();
+       // area.showFree();
     }
 }

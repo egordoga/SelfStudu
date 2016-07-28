@@ -13,7 +13,9 @@ public class Area {
     //Date endDate;
 
 
-    public Area(){}
+    public Area() {
+    }
+
     public Area(int numberPlace, int typeId, boolean freePlace) {
         this.numberPlace = numberPlace;
         this.typeId = typeId;
@@ -21,33 +23,42 @@ public class Area {
     }
 
     Area place[] = new Area[50];
+    //Area area = new Area();
 
+    public Area[] setPlace() {
 
-
-    public   void setPlace(){
-
-        for (int i = 0; i <10; i++) {
-            place[i] = new Area(i+1, 1, true);
+        for (int i = 0; i < 10; i++) {
+            place[i] = new Area(i + 1, 1, true);
         }
         for (int i = 10; i < 40; i++) {
-            place[i] = new Area(i+1, 2, true);
+            place[i] = new Area(i + 1, 2, false);
         }
         for (int i = 40; i < 45; i++) {
-            place[i] = new Area(i+1, 3, false);
+            place[i] = new Area(i + 1, 3, false);
         }
         for (int i = 45; i < 50; i++) {
-            place[i] = new Area(i+1, 4, true);
+            place[i] = new Area(i + 1, 4, true);
         }
-
+        return place;
 
     }
 
-    public  void showFree(){
+    public String showFree(Area[] place)  {
+        String str = "camsa";
         for (int i = 0; i < 50; i++) {
-            if (place[i].freePlace){
-                System.out.print( place[i].numberPlace + ", " );
+           //numberPlace[i] = new Area();
+
+            if (place[i].freePlace) {
+                //System.out.print( numberPlace[i].numberPlace + ", " );
+                str += place[i].numberPlace + " ,";
             }
         }
+        return str;
+    }
 
+
+
+    public void makeBusy(int i){
+        place[i].freePlace = false;
     }
 }

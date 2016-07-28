@@ -8,6 +8,9 @@ public class C {
     public static void main(String[] args) {
 
         A a= new A();
-        a.print(2,4);
+        B b = new B();
+        a.print(22,4);
+        b.print1("KJHKJ  " + a.string());
+        a.doIt();
     }
 }
