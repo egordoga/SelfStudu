@@ -33,8 +33,8 @@
             size++;
         }
 
-        public String toStringCC(){
-            String str = name + "  " + phone + "  " + car + "  " + numberPlace;
+        public String toStringCC(ConstantClient constantClient){
+            String str = constantClient.name + "  " + constantClient.phone + "  " + constantClient.car + "  " + constantClient.numberPlace;
             return str;
 
         }

@@ -62,3 +62,4 @@ public class Area {
         place[i].freePlace = false;
     }
 }
+//gfag
