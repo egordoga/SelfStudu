@@ -16,4 +16,9 @@ public class Car {
         this.number = number;
         this.typeId = typeId;
     }
+
+    String toStringCar(Car car){
+        String string = car.model + "  " + car.number + "  " + car.typeId;
+        return string;
+    }
 }

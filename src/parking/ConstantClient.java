@@ -10,7 +10,7 @@
         int numberPlace;
 
         Scanner scanner = new Scanner(System.in);
-        ConstantClient constantClient;
+        //ConstantClient constantClient;
 
         Area area = new Area();
 
@@ -34,7 +34,8 @@
         }
 
         public String toStringCC(ConstantClient constantClient){
-            String str = constantClient.name + "  " + constantClient.phone + "  " + constantClient.car + "  " + constantClient.numberPlace;
+            String str = constantClient.name + "  " + constantClient.phone + "  "
+                        + car.toStringCar(car) + "  " + constantClient.numberPlace;
             return str;
 
         }
