@@ -9,6 +9,8 @@ public class TestConstClient {
         ConstantClient constantClient = new ConstantClient();
         ConstantClient cc = constantClient.addConstantClient();
         constantClient.showListConstClient(constantClient.toStringCC(cc));
+        ConstantClient cc1 = constantClient.addConstantClient();
+        constantClient.showListConstClient(constantClient.toStringCC(cc1));
 
     }
 }

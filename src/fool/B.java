@@ -22,6 +22,10 @@ public class B {
         return b;
     }
 
+    void changePole(int ii){
+        b[ii].bb = false;
+    }
+
     public String isFree(B[] b){
         String str = "Igor";
         for (int i = 0; i < 3; i++) {
@@ -34,6 +38,10 @@ public class B {
 
     public void print1(String str){
         System.out.println(str);
+    }
+
+    void change(int i){
+        b[i].bb = false;
     }
 
 }

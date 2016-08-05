@@ -12,5 +12,8 @@ public class C {
         a.print(22,4);
         b.print1("KJHKJ  " + a.string());
         a.doIt();
+        a.isChange();
+        a.doIt();
+
     }
 }

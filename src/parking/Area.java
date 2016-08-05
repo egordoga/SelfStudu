@@ -44,7 +44,7 @@ public class Area {
     }
 
     public String showFree(Area[] place)  {
-        String str = "camsa";
+        String str = "";
         for (int i = 0; i < 50; i++) {
            //numberPlace[i] = new Area();
 

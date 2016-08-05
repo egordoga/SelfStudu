@@ -10,16 +10,15 @@
         int numberPlace;
 
         Scanner scanner = new Scanner(System.in);
-        //ConstantClient constantClient;
 
         Area area = new Area();
 
 
-        public ConstantClient() {
-        }
+        public ConstantClient() {}
 
-        public ConstantClient(String name, String phone, Car car, int numberPlace) {
-            super(name, phone, car);
+        public ConstantClient(String name, String phone, String model,
+                              String number, int typeId, int numberPlace) {
+            super(name, phone, model, number, typeId);
             this.numberPlace = numberPlace;
         }
 
@@ -35,7 +34,8 @@
 
         public String toStringCC(ConstantClient constantClient){
             String str = constantClient.name + "  " + constantClient.phone + "  "
-                        + car.toStringCar(car) + "  " + constantClient.numberPlace;
+                        + constantClient.model + "  " + constantClient.number + "  "
+                        + constantClient.numberPlace;
             return str;
 
         }
@@ -68,8 +68,8 @@
             int numberPlace = scanner.nextInt();
 
 
-            Car car = new Car(model, number, typeId);
-            ConstantClient constantClient = new ConstantClient(name, phone, car, numberPlace);
+
+            ConstantClient constantClient = new ConstantClient(name, phone, model,number,typeId, numberPlace);
             addConstClient(constantClient);
             area.makeBusy(numberPlace);
 
