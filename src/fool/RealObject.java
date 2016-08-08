@@ -8,7 +8,7 @@ public class RealObject {
     String stroka;
     boolean logic;
 
-    RealObject[] masik = new RealObject[5];
+
 
     RealObject(){}
 
@@ -18,13 +18,7 @@ public class RealObject {
         this.logic = logic;
     }
 
-    void initMas(){
-        String str = "masik";
-        for (int i = 0; i < 5; i++) {
-            masik[i] = new RealObject(i, str + i, true);
-        }
 
-    }
 
     String toStringMas(RealObject[] mas){
         String str = "";

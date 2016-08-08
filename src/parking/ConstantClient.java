@@ -22,14 +22,33 @@
             this.numberPlace = numberPlace;
         }
 
-        ConstantClient[] listConstant = new ConstantClient[50];
-        int size = 0;
+        ConstantClient[] listConstant = new ConstantClient[20];
+        int sizeMoto = 0;
+        int sizeCar = 4;
+        int sizeMini = 9;
+        int sizeFreight = 14;
 
 
 
         public void addConstClient(ConstantClient constantClient) {
-            listConstant[size] = constantClient;
-            size++;
+            if (constantClient.typeId == 1) {
+                listConstant[sizeMoto] = constantClient;
+                sizeMoto++;
+            } else {
+                if (constantClient.typeId == 2) {
+                    listConstant[sizeCar] = constantClient;
+                    sizeCar++;
+                } else {
+                    if (constantClient.typeId == 3) {
+                        listConstant[sizeMini] = constantClient;
+                        sizeMini++;
+                    } else {
+                            listConstant[sizeFreight] = constantClient;
+                            sizeFreight++;
+
+                    }
+                }
+            }
         }
 
         public String toStringCC(ConstantClient constantClient){
@@ -41,7 +60,7 @@
         }
 
         public void showListConstClient (String str){
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < sizeMoto; i++) {
                 System.out.println(str);
             }
         }
@@ -62,7 +81,7 @@
              int typeId = scanner.nextInt();
 
 
-             System.out.println(area.showFree(area.setPlace()));
+            // System.out.println(area.toStreengFree(area.setPlace()));
 
             System.out.println("Input car numberPlace");
             int numberPlace = scanner.nextInt();
@@ -71,7 +90,7 @@
 
             ConstantClient constantClient = new ConstantClient(name, phone, model,number,typeId, numberPlace);
             addConstClient(constantClient);
-            area.makeBusy(area.place, numberPlace);
+            //area.makeBusy(numberPlace);
 
              return constantClient;
         }

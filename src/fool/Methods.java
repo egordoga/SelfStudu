@@ -6,10 +6,18 @@ package fool;
 public class Methods {
 
 
-
+    RealObject[] masik = new RealObject[5];
 
     void printMas(String string){
         System.out.println(string);
+    }
+
+     void initMas(){
+        String str = "masik";
+        for (int i = 0; i < 5; i++) {
+            masik[i] = new  RealObject(i, str + i, true);
+        }
+
     }
 
     void change(RealObject[] mas){

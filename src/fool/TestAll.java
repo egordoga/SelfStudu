@@ -10,10 +10,10 @@ public class TestAll {
         RealObject obj = new RealObject();
         Methods met = new Methods();
 
-        obj.initMas();
-        met.printMas(obj.toStringMas(obj.masik));
-        met.change(obj.masik);
-        met.printMas(obj.toStringMas(obj.masik));
+        met.initMas();
+        met.printMas(obj.toStringMas(met.masik));
+        met.change(met.masik);
+        met.printMas(obj.toStringMas(met.masik));
 
 
     }
