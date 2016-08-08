@@ -58,7 +58,7 @@ public class Area {
 
 
 
-    public void makeBusy(int i){
+    public void makeBusy(Area[] place, int i){
         place[i].freePlace = false;
     }
 }

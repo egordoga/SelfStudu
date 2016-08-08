@@ -71,7 +71,7 @@
 
             ConstantClient constantClient = new ConstantClient(name, phone, model,number,typeId, numberPlace);
             addConstClient(constantClient);
-            area.makeBusy(numberPlace);
+            area.makeBusy(area.place, numberPlace);
 
              return constantClient;
         }
