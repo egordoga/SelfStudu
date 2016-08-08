@@ -22,7 +22,7 @@ public class Area {
         this.freePlace = freePlace;
     }
 
-    Area place[] = new Area[50];
+    /*Area place[] = new Area[50];
     //Area area = new Area();
 
     public Area[] setPlace() {
@@ -41,15 +41,14 @@ public class Area {
         }
         return place;
 
-    }
+    }*/
 
-    public String showFree(Area[] place)  {
+    public String toStreengFree(Area[] place) {
         String str = "";
-        for (int i = 0; i < 50; i++) {
-           //numberPlace[i] = new Area();
+        for (int i = 0; i < 20; i++) {
 
             if (place[i].freePlace) {
-                //System.out.print( numberPlace[i].numberPlace + ", " );
+
                 str += place[i].numberPlace + " ,";
             }
         }
@@ -57,9 +56,7 @@ public class Area {
     }
 
 
-
-    public void makeBusy(int i){
+   /* public void makeBusy(int i) {
         place[i].freePlace = false;
-    }
+    }*/
 }
-//gfag
