@@ -6,20 +6,46 @@ package parking;
 public class Area {
 
     int numberPlace;
-    int typeId;
-    boolean freePlace;
+    boolean busyPlace;
+
+    public Area(int numberPlace, boolean busyPlace) {
+        this.numberPlace = numberPlace;
+        this.busyPlace = busyPlace;
+    }
+
+    public Area(){}
+
+    //Area[] place = new Area[10];
+
+    Car car = new Car();
+    //MainMenu mm = new MainMenu();
+
+
+    public String toStreengFree(Area[] place){
+        String str = "";
+        for (int i = 0; i < 10; i++) {
+            if (!place[i].busyPlace) {
+                str += (i + 1) + ", ";
+            }
+        }
+        return str;
+    }
+
+
+}
+    //int typeId;
     //int quantityDays;
     //Date startDate;
     //Date endDate;
 
 
-    public Area() {
+   /* public Area() {
     }
 
     public Area(int numberPlace, int typeId, boolean freePlace) {
         this.numberPlace = numberPlace;
         this.typeId = typeId;
-        this.freePlace = freePlace;
+        this.BusyPlace = freePlace;
     }
 
     /*Area place[] = new Area[50];
@@ -41,13 +67,13 @@ public class Area {
         }
         return place;
 
-    }*/
+    }
 
     public String toStreengFree(Area[] place) {
         String str = "";
         for (int i = 0; i < 20; i++) {
 
-            if (place[i].freePlace) {
+            if (!place[i].BusyPlace) {
 
                 str += place[i].numberPlace + " ,";
             }
@@ -56,7 +82,7 @@ public class Area {
     }
 
 
-   /* public void makeBusy(int i) {
-        place[i].freePlace = false;
-    }*/
-}
+   public void makeBusy(int i) {
+        place[i].BusyPlace = false;
+    }
+}*/

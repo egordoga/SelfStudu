@@ -10,25 +10,32 @@ public class MainMenu {
     private Scanner scanner = new Scanner(System.in);
 
 
-    public void start(){
+    Car car = new Car();
+    Area area = new Area();
+   // Area[] place = new Area[10];
+
+
+
+
+    public void start(Area[] place){
 
 
         while(true){
 
             System.out.println("1.Проверить свободные места");
-            System.out.println("2. Добавить постоянного клиента");
-            System.out.println("3. Парковать ТС");
+            System.out.println("2. Парковать ТС");
+            System.out.println("3. Освободить место");
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
 
             if(choice == 1){
-               // showAddContactMenu();
+                System.out.println(area.toStreengFree(place));
             } else if(choice == 2){
-               // showAllContactsMenu();
+                car.park(place);
             } else if(choice == 3){
-               // showContactDetailsMenu();
-            } else if(choice == 0){
+                car.unPark(place);
+            } else {
                 break;
             }
 

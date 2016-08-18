@@ -1,17 +1,15 @@
     package parking;
 
-    import java.util.Scanner;
-
     /**
      * Created by Master on 03.07.2016.
-     */
+
     public class ConstantClient extends Client {
 
         int numberPlace;
 
         Scanner scanner = new Scanner(System.in);
 
-        Area area = new Area();
+        Area[] area = new Area[20];
 
 
         public ConstantClient() {}
@@ -33,6 +31,7 @@
         public void addConstClient(ConstantClient constantClient) {
             if (constantClient.typeId == 1) {
                 listConstant[sizeMoto] = constantClient;
+                area[sizeCar].
                 sizeMoto++;
             } else {
                 if (constantClient.typeId == 2) {
@@ -68,23 +67,23 @@
 
 
 
-         ConstantClient addConstantClient(/*String string*/){
+         ConstantClient addConstantClient(/*String string){
              System.out.println("Input name");
-             String name = scanner.next();
+             name = scanner.next();
              System.out.println("Input phone");
-             String phone = scanner.next();
+             phone = scanner.next();
              System.out.println("Input car model");
-             String model = scanner.next();
+             model = scanner.next();
              System.out.println("Input car number");
-             String number = scanner.next();
+             number = scanner.next();
              System.out.println("Input car ID");
-             int typeId = scanner.nextInt();
+             typeId = scanner.nextInt();
 
 
             // System.out.println(area.toStreengFree(area.setPlace()));
 
             System.out.println("Input car numberPlace");
-            int numberPlace = scanner.nextInt();
+            area.numberPlace = scanner.nextInt();
 
 
 
@@ -95,7 +94,7 @@
              return constantClient;
         }
 
-        }
+        }*/
 
 
 
