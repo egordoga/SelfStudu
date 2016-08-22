@@ -5,12 +5,10 @@ package parking;
  */
 public class Client {
 
-     String name;
-     String phone;
+     private String name;
+     private String phone;
      Car car;
-     //String model;
-     //String number;
-     //int typeId;
+
     // typeId -> 1. motorcycle 2. car 3. minibus 4. freight car
 
     public Client() {
@@ -20,13 +18,12 @@ public class Client {
         this.name = name;
         this.phone = phone;
         this.car = car;
-       // this.model = model;
-       // this.number = number;
-        //this.typeId = typeId;
+
     }
 
     public String toString(Client client){
-        String str  = client.name + " " + client.phone + " " + car.toString();
+        String str  = client.name + " " + client.phone + " " + client.car.getModel() + " " + client.car.getNumber()
+                + " " + client.car.getTypeId() + " " + client.car.getNumberPlace();
                 return str;
     }
 }

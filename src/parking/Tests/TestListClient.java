@@ -1,5 +1,6 @@
 package parking.Tests;
 
+import parking.Car;
 import parking.Client;
 import parking.ListClient;
 
@@ -12,12 +13,13 @@ public class TestListClient {
 
 
         ListClient listClient = new ListClient();
-        Client client = new Client();
+        Client client;// = new Client();
+        Car car;// = new Car();
 
+        car = listClient.writeCar();
+        client = listClient.writeClient(car);
 
-        //listClient.writeClient();
-
-        System.out.println(client.toString(listClient.writeClient()));
+        System.out.println(client.toString(client));
 
     }
 }

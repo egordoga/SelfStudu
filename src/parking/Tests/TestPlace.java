@@ -18,13 +18,13 @@ public class TestPlace {
        Scanner sc = new Scanner(System.in);
 
 
-       car.initArea();
+       /*car.initArea();
         System.out.println(area.toStreengFree(car.place));
-        car.park(car.place);
+        //car.park(car.place);
         System.out.println(area.toStreengFree(car.place));
-        car.park(car.place);
+        //car.park(car.place);
         System.out.println(area.toStreengFree(car.place));
-        car.unPark(car.place);
-        System.out.println(area.toStreengFree(car.place));
+        //car.unPark(car.place);
+        System.out.println(area.toStreengFree(car.place));*/
     }
 }

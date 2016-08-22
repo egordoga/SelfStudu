@@ -1,6 +1,5 @@
 package parking.Tests;
 
-import parking.Area;
 import parking.Car;
 import parking.MainMenu;
 
@@ -12,9 +11,9 @@ public class TestMainMenu {
     public static void main(String[] args) {
         MainMenu mainMenu = new MainMenu();
         Car car = new Car();
-        Area area = new Area();
+        //Area area = new Area();
 
-        car.initArea();
+        //car.initArea();
         mainMenu.start(car.place);
     }
 }
