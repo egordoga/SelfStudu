@@ -24,10 +24,11 @@ public class MainMenu {
 
         while (true) {
 
-            System.out.println("1.Проверить свободные места");
+            System.out.println("1. Проверить свободные места");
             System.out.println("2. Парковать ТС");
             System.out.println("3. Освободить место");
             System.out.println("4. Вывести список клиентов");
+            System.out.println("5. Показать клиента по номеру места");
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
@@ -42,6 +43,10 @@ public class MainMenu {
                 car.unPark(listClient.listClients);
             } else if (choice == 4) {
                 listClient.printList(listClient.listClients);
+            } else if (choice == 5){
+                System.out.println("Введите номер места");
+                int mesto = scanner.nextInt();
+                System.out.println(client.toString(listClient.listClients[mesto-1]));
             } else break;
 
 
