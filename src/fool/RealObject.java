@@ -10,7 +10,7 @@ public class RealObject {
 
 
 
-    RealObject(){}
+    public RealObject(){}
 
     public RealObject(int chislo, String stroka, boolean logic) {
         this.chislo = chislo;
@@ -20,10 +20,12 @@ public class RealObject {
 
 
 
-    String toStringMas(RealObject[] mas){
+    public String toStringMas(RealObject[] mas){
         String str = "";
         for (int i = 0; i < mas.length; i++) {
-            str += mas[i].chislo + " " + mas[i].stroka + " " + mas[i].logic + "\n";
+            if (mas[i].logic) {
+                str += mas[i].chislo + " " + mas[i].stroka + " " + mas[i].logic + "\n";
+            }
         }
         return str;
     }

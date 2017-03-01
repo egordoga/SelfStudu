@@ -10,54 +10,49 @@ public class MainMenu {
     private Scanner scanner = new Scanner(System.in);
 
 
-    public void start(){
+    private Car car = new Car();
+    Area area = new Area();
+    // Area[] place = new Area[10];
+    private Client client;
 
 
-        while(true){
+    public void start(Area[] place) {
+        //Client client = new Client();
+        ListClient listClient = new ListClient();
+        //ListClient[] listClients = new ListClient[10];
 
-            System.out.println("1.Проверить свободные места");
-            System.out.println("2. Добавить постоянного клиента");
-            System.out.println("3. Парковать ТС");
+
+        while (true) {
+
+            System.out.println("1. Проверить свободные места");
+            System.out.println("2. Парковать ТС");
+            System.out.println("3. Освободить место");
+            System.out.println("4. Вывести список клиентов");
+            System.out.println("5. Показать клиента по номеру места");
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
 
-            if(choice == 1){
-               // showAddContactMenu();
-            } else if(choice == 2){
-               // showAllContactsMenu();
-            } else if(choice == 3){
-               // showContactDetailsMenu();
-            } else if(choice == 0){
-                break;
-            }
+            if (choice == 1) {
+                System.out.println(car.toStreengFree(listClient.listClients));
+            } else if (choice == 2) {
+                this.client = listClient.writeClient(listClient.writeCar());
+                listClient.addClient(client);
+                //car.park(place, client);
+            } else if (choice == 3) {
+                car.unPark(listClient.listClients);
+            } else if (choice == 4) {
+                listClient.printList(listClient.listClients);
+            } else if (choice == 5){
+                System.out.println("Введите номер места");
+                int mesto = scanner.nextInt();
+                System.out.println(client.toString(listClient.listClients[mesto-1]));
+            } else break;
+
 
         }
     }
 
-    /*private void showContactDetailsMenu() {
-        System.out.println("Input contact position");
-        int postion = scanner.nextInt();
-
-        Contact contact = contactList.getContact(postion);
-        System.out.println(contact.toJson());
-    }
-
-    private void showAllContactsMenu() {
-        System.out.println(contactList.asString());
-    }
-
-    private void showAddContactMenu(){
-        System.out.println("Input name");
-        String name = scanner.next();
-        System.out.println("Input phone");
-        String phone = scanner.next();
-
-        Contact contact = new Contact();
-        contact.initContact(name,phone);
-        contactList.addContact(contact);
-
-    }*/
 
 
 

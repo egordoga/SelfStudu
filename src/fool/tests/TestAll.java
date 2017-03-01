@@ -1,4 +1,7 @@
-package fool;
+package fool.tests;
+
+import fool.Methods;
+import fool.RealObject;
 
 /**
  * Created by Master on 04.08.2016.

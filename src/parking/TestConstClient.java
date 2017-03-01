@@ -5,12 +5,12 @@ package parking;
  */
 public class TestConstClient {
     public static void main(String[] args) {
-        Area area = new Area();
+       /* Area area = new Area();
         ConstantClient constantClient = new ConstantClient();
         ConstantClient cc = constantClient.addConstantClient();
         constantClient.showListConstClient(constantClient.toStringCC(cc));
         ConstantClient cc1 = constantClient.addConstantClient();
-        constantClient.showListConstClient(constantClient.toStringCC(cc1));
+        constantClient.showListConstClient(constantClient.toStringCC(cc1));*/
 
     }
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proba</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<button id="ajaxPost">POST Data</button>
+<div id="container"></div>
+<div class="row">
+    <div class="input-field col s6">
+        <input  id="first_name2" type="text" class="validate">
+        <label class="active" for="first_name2">First Name</label>
+    </div>
+</div>
+</body>
+<script>
+    $("#ajaxPost").click(function() {
+    $.ajax({
+    type: "POST",
+    url: "http://localhost:80/4000",
+    // dataType : "json",
+    data: JSON.stringify({
+    name: "serhii"
+    }),
+    success: function(result) {
+    $("#container").html(result);
+    }
+    });
+    });
+  </script>
+
+
+</html>
