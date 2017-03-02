@@ -1,0 +1,45 @@
+
+<!--$.ajax({-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+</head>
+
+<body>
+
+<!--<form action="/" id="searchForm">
+
+    <input type="text" name="s" placeholder="Search..." />
+
+    <input type="submit" value="Search" />
+
+</form>-->
+
+<!-- результат будет отображён в этом div -->
+
+<div id="results"></div>
+
+
+
+<script>
+
+$.ajax({
+  type: 'POST',
+  url: 'http://localhost:8000',
+  data: 'Nu hot chto-to',
+  success: function(data){
+    $('.results').html(data);
+  }
+});
+
+</script>
+
+</body>
+
+</html>

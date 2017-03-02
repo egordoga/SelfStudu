@@ -5,42 +5,62 @@ package parking;
  */
 public class Area {
 
-/*    private int numberPlace;
-    private boolean busyPlace;
+    int numberPlace;
+    int typeId;
+    boolean freePlace;
+    //int quantityDays;
+    //Date startDate;
+    //Date endDate;
 
-    public Area(int numberPlace, boolean busyPlace) {
+
+    public Area() {
+    }
+
+    public Area(int numberPlace, int typeId, boolean freePlace) {
         this.numberPlace = numberPlace;
-        this.busyPlace = busyPlace;
+        this.typeId = typeId;
+        this.freePlace = freePlace;
     }
 
-    public Area(){}
+    Area place[] = new Area[50];
+    //Area area = new Area();
 
-    public int getNumberPlace() {
-        return numberPlace;
-    }
+    public Area[] setPlace() {
 
-    public void setNumberPlace(int numberPlace) {
-        this.numberPlace = numberPlace;
-    }
-
-    public boolean isBusyPlace() {
-        return busyPlace;
-    }
-
-    public void setBusyPlace(boolean busyPlace) {
-        this.busyPlace = busyPlace;
-    }
-
-    public String toStreengFree(Area[] place){
-        String str = "";
         for (int i = 0; i < 10; i++) {
-            if (!place[i].busyPlace) {
-                str += (i + 1) + ", ";
+            place[i] = new Area(i + 1, 1, true);
+        }
+        for (int i = 10; i < 40; i++) {
+            place[i] = new Area(i + 1, 2, false);
+        }
+        for (int i = 40; i < 45; i++) {
+            place[i] = new Area(i + 1, 3, false);
+        }
+        for (int i = 45; i < 50; i++) {
+            place[i] = new Area(i + 1, 4, true);
+        }
+        return place;
+
+    }
+
+
+    public String showFree(Area[] place)  {
+        String str = "";
+        for (int i = 0; i < 50; i++) {
+           //numberPlace[i] = new Area();
+
+            if (place[i].freePlace) {
+                //System.out.print( numberPlace[i].numberPlace + ", " );
+                str += place[i].numberPlace + " ,";
             }
         }
         return str;
     }
 
-*/
-}
 
+
+    public void makeBusy(Area[] place, int i){
+        place[i].freePlace = false;
+    }
+}
+//gfag

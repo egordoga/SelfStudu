@@ -1,5 +1,6 @@
 package halfFool.week6;
 
+import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -13,14 +14,35 @@ import java.util.Arrays;
 
 public class MyTest {
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+        Gson gson = new Gson();
+        DataDB dataDB = new DataDB();
+        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/", new HttpHandler(){
             @Override
             public void handle(HttpExchange exc) throws IOException {
                 exc.sendResponseHeaders(200, 0);
+                exc.getResponseHeaders().put("Access-Control-Allow-Origin", Arrays.asList("*"));
                 PrintWriter out = new PrintWriter(exc.getResponseBody());
-                out.println("I`m full fool");
-                out.close();
+                //out.println("Hello, Sania");
+                OutputStream os = exc.getResponseBody();
+
+                dataDB.initList();
+                for (Data data : dataDB.list) {
+                    String json = gson.toJson(data);
+                   byte[] bytes = json.getBytes();
+                    //exc.sendResponseHeaders(200, bytes.length);
+                    os.write(bytes);
+                    //out.println(json);
+                }
+
+                InputStream is = exc.getRequestBody();
+                StringBuilder sb = new StringBuilder();
+
+                int read = -1;
+                while((read = is.read()) != -1){
+                    System.out.print((char)read);
+                }
+                //out.close();
                 exc.close();
             }
         });

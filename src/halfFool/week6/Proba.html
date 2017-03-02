@@ -6,29 +6,74 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 <body>
-<button id="ajaxPost">POST Data</button>
+<button id="ajaxPost">Show all products</button>
 <div id="container"></div>
 <div class="row">
-    <div class="input-field col s6">
+   <!-- <div class="input-field col s6">
         <input  id="first_name2" type="text" class="validate">
         <label class="active" for="first_name2">First Name</label>
-    </div>
+    </div>-->
 </div>
 </body>
 <script>
-    $("#ajaxPost").click(function() {
+
+$(function() {
+    $("#ajaxPost").submit(function() {
+       <!-- var formData = {
+            "field1":$("#field1").val()
+            , "field2":$("#field2").val()
+        };-->
+        $.ajax({
+            url:'http://localhost:8000'
+            , type:'POST'
+           <!-- , data:'jsonData=' + $.toJSON(formData)-->
+            , success: function(res) {
+                alert(res);
+            }
+        });
+        return false;
+    });
+});
+
+
+<!--$.ajax({
+  url: "localhost:8000",
+  success: function(data){
+    alert( "Прибыли данные: " + data );
+  }
+});-->
+
+  $("#ajaxPost").click(function() {
     $.ajax({
-    type: "POST",
-    url: "http://localhost:80/4000",
-    // dataType : "json",
+    //$.get( "localhost:8000" );
+    var request = new XMLHttpRequest();
+    request.open('GET','localhost:8000',false);
+    request.send();
+
+    &lt;!&ndash;//type: "POST",
+    url: "http://localhost:8000/",
+     dataType : "json",
     data: JSON.stringify({
-    name: "serhii"
+    name: "serhii"&ndash;&gt;
     }),
     success: function(result) {
     $("#container").html(result);
     }
     });
     });
+
+    $.getJSON('http://localhost:8000', function(data){
+  var items = [];
+
+  $.each(data, function(key, val){
+    items.push('<li id="' + key + '">' + val + '</li>');
+  });
+
+  $('<ul/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
+});
   </script>
 
 
