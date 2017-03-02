@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+<script>
+$.ajax({
+    url: 'http://localhost:8000/2000',             // указываем URL и
+    dataType : "json",                     // тип загружаемых данных
+    success: function (data, textStatus) { // вешаем свой обработчик на функцию success
+        $.each(data, function(i, val) {    // обрабатываем полученные данные
+            alert("KJHKJHKJH");
+        });
+    }
+    alert("fshghsgh")
+});
+
+</script>
+</body>
+</html>

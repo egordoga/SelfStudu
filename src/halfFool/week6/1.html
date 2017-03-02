@@ -31,10 +31,11 @@
 
 $.ajax({
   type: 'POST',
-  url: 'http://localhost:8000',
+  url: 'http://localhost:8000/2000',
   data: 'Nu hot chto-to',
   success: function(data){
     $('.results').html(data);
+    alert(html);
   }
 });
 

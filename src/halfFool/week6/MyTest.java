@@ -22,18 +22,18 @@ public class MyTest {
             public void handle(HttpExchange exc) throws IOException {
                 exc.sendResponseHeaders(200, 0);
                 exc.getResponseHeaders().put("Access-Control-Allow-Origin", Arrays.asList("*"));
-                PrintWriter out = new PrintWriter(exc.getResponseBody());
-                //out.println("Hello, Sania");
+                /*PrintWriter out = new PrintWriter(exc.getResponseBody());
+                out.println("Hello, Sania");
                 OutputStream os = exc.getResponseBody();
 
                 dataDB.initList();
                 for (Data data : dataDB.list) {
                     String json = gson.toJson(data);
                    byte[] bytes = json.getBytes();
-                    //exc.sendResponseHeaders(200, bytes.length);
+                    exc.sendResponseHeaders(200, bytes.length);
                     os.write(bytes);
                     //out.println(json);
-                }
+                }*/
 
                 InputStream is = exc.getRequestBody();
                 StringBuilder sb = new StringBuilder();
@@ -46,6 +46,42 @@ public class MyTest {
                 exc.close();
             }
         });
+
+        server.createContext("/2000", new HttpHandler(){
+            @Override
+            public void handle(HttpExchange exc) throws IOException {
+                //exc.sendResponseHeaders(200, 0);
+                exc.getResponseHeaders().put("Access-Control-Allow-Origin", Arrays.asList("*"));
+                PrintWriter out = new PrintWriter(exc.getResponseBody());
+                //out.println("Hello, Sania");
+                OutputStream os = exc.getResponseBody();
+
+                String json = "Nu skolko mozhno";
+                byte[] bytes = json.getBytes();
+                exc.sendResponseHeaders(200, bytes.length);
+                os.write(bytes);
+
+                /*dataDB.initList();
+                for (Data data : dataDB.list) {
+                    String json = gson.toJson(data);
+                   byte[] bytes = json.getBytes();
+                    exc.sendResponseHeaders(200, bytes.length);
+                    os.write(bytes);
+                    //out.println(json);
+                }
+*/
+                /*InputStream is = exc.getRequestBody();
+                StringBuilder sb = new StringBuilder();
+
+                int read = -1;
+                while((read = is.read()) != -1){
+                    System.out.print((char)read);
+                }*/
+                out.close();
+                exc.close();
+            }
+        });
+
         server.createContext("/4000", new HttpHandler(){
             @Override
             public void handle(HttpExchange httpExchange) throws IOException {
