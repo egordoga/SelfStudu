@@ -24,21 +24,24 @@
 <!-- результат будет отображён в этом div -->
 
 <div id="results"></div>
+<div id="sss"></div>
 
 
 
 <script>
-
+<!--$(document).ready(function() {-->
 $.ajax({
   type: 'POST',
-  url: 'http://localhost:8000/2000',
+  url: 'http://localhost:8000',
   data: 'Nu hot chto-to',
   success: function(data){
-    $('.results').html(data);
-    alert(html);
-  }
-});
+    $('#results').html(data);
 
+var ss = $('#results').html(data);
+document.getElementById('sss').innerHTML = ss;
+
+}
+});
 </script>
 
 </body>

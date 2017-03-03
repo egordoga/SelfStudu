@@ -7,15 +7,17 @@
 </head>
 <body>
 <script>
-$.ajax({
-    url: 'http://localhost:8000/2000',             // указываем URL и
-    dataType : "json",                     // тип загружаемых данных
-    success: function (data, textStatus) { // вешаем свой обработчик на функцию success
-        $.each(data, function(i, val) {    // обрабатываем полученные данные
-            alert("KJHKJHKJH");
-        });
-    }
-    alert("fshghsgh")
+$.getJSON('http://localhost:8000', function(data){
+  var items = [];
+
+  $.each(data, function(key, val){
+    items.push('<li id="' + key + '">' + val + '</li>');
+  });
+
+  $('<ul/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
 });
 
 </script>

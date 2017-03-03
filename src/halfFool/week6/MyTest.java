@@ -20,10 +20,10 @@ public class MyTest {
         server.createContext("/", new HttpHandler(){
             @Override
             public void handle(HttpExchange exc) throws IOException {
-                exc.sendResponseHeaders(200, 0);
+                //exc.sendResponseHeaders(200, 0);
                 exc.getResponseHeaders().put("Access-Control-Allow-Origin", Arrays.asList("*"));
-                /*PrintWriter out = new PrintWriter(exc.getResponseBody());
-                out.println("Hello, Sania");
+                PrintWriter out = new PrintWriter(exc.getResponseBody());
+                //out.println("Hello, Sania");
                 OutputStream os = exc.getResponseBody();
 
                 dataDB.initList();
@@ -33,15 +33,15 @@ public class MyTest {
                     exc.sendResponseHeaders(200, bytes.length);
                     os.write(bytes);
                     //out.println(json);
-                }*/
+                }
 
-                InputStream is = exc.getRequestBody();
+               /* InputStream is = exc.getRequestBody();
                 StringBuilder sb = new StringBuilder();
 
                 int read = -1;
                 while((read = is.read()) != -1){
                     System.out.print((char)read);
-                }
+                }*/
                 //out.close();
                 exc.close();
             }
@@ -56,12 +56,12 @@ public class MyTest {
                 //out.println("Hello, Sania");
                 OutputStream os = exc.getResponseBody();
 
-                String json = "Nu skolko mozhno";
+                /*String json = "Nu skolko mozhno";
                 byte[] bytes = json.getBytes();
                 exc.sendResponseHeaders(200, bytes.length);
-                os.write(bytes);
+                os.write(bytes);*/
 
-                /*dataDB.initList();
+                dataDB.initList();
                 for (Data data : dataDB.list) {
                     String json = gson.toJson(data);
                    byte[] bytes = json.getBytes();
@@ -69,7 +69,6 @@ public class MyTest {
                     os.write(bytes);
                     //out.println(json);
                 }
-*/
                 /*InputStream is = exc.getRequestBody();
                 StringBuilder sb = new StringBuilder();
 
