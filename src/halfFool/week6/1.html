@@ -29,15 +29,16 @@
 
 
 <script>
-<!--$(document).ready(function() {-->
 $.ajax({
   type: 'POST',
   url: 'http://localhost:8000',
   data: 'Nu hot chto-to',
   success: function(data){
-    $('#results').html(data);
+   $('#results').html(data);
 
-var ss = $('#results').html(data);
+    var ss = data;
+    //var arr = ss.split("%");
+//document.getElementById('sss').innerHTML = JSON.parse(arr[3]).name;
 document.getElementById('sss').innerHTML = ss;
 
 }

@@ -27,13 +27,22 @@ public class MyTest {
                 OutputStream os = exc.getResponseBody();
 
                 dataDB.initList();
+                Object[] listArr =  dataDB.list.toArray();
+
+                System.out.println(Arrays.toString(listArr));
+
+               /* String json = "";
                 for (Data data : dataDB.list) {
-                    String json = gson.toJson(data);
+                    json += gson.toJson(data) + "%";
+                }*/
+                String json = gson.toJson(listArr);
+
+                System.out.println(json);
                    byte[] bytes = json.getBytes();
                     exc.sendResponseHeaders(200, bytes.length);
                     os.write(bytes);
                     //out.println(json);
-                }
+
 
                /* InputStream is = exc.getRequestBody();
                 StringBuilder sb = new StringBuilder();
