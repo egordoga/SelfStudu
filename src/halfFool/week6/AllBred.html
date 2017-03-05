@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+    <OL TYPE="1" START="2">
+        <LI> Пункт два </LI>
+        <LI> Пункт три </LI>
+        <LI> Пункт четыре </LI>
+    </OL>
+</div>
+<DIV ALIGN="center">
+    <TABLE WIDTH="70">
+        <LI> Пункт четыре </LI>
+    </TABLE>
+</DIV>
+
+<!-- Создаем форму -->
+<FORM ACTION="/cgi-bin/thanks.pl" METHOD=GET NAME="TestForm">
+
+    <!-- Внутри формы создаем поле ввода: -->
+    Фамилия:
+    <INPUT TYPE="text" name="lastname" SIZE="20" VALUE="Пупкин"><br>
+
+    <!-- Кнопка "Отправить": -->
+    <INPUT TYPE="submit" VALUE="Отправить">
+</FORM>
+<!-- Все, конец форме -->'
+
+
+<FORM NAME="Form1" ACTION="http://www.igf.ru/cgi-bin/banya.pl">
+    <INPUT TYPE="hidden" NAME="info" VALUE="Запись в баню на воскресенье">
+    <INPUT TYPE="radio" NAME="sex" VALUE="Male" CHECKED> Мужик<BR>
+    <INPUT TYPE="radio" NAME="sex" VALUE="Female"> Баба<BR>
+    Имя:<BR>
+    <INPUT TYPE="text" NAME="textfield" VALUE="Вася Пупкин" SIZE="30" MAXLENGTH="60"><BR>
+    Пароль:<BR>
+    <INPUT TYPE="password" WIDTH="10" NAME="passwd"><BR><BR>
+    <INPUT TYPE="submit" VALUE="Запулить">
+</FORM>
+
+Хочу получать следующие издания:<br>
+<FORM NAME="Form2" ACTION="http://www.igf.ru/cgi-bin/magazines.pl">
+    <INPUT TYPE="checkbox" NAME="m1">Страшная газета<br>
+    <INPUT TYPE="checkbox" NAME="m2">6 соток<BR>
+    <INPUT TYPE="checkbox" NAME="m3" CHECKED>Мурзилка<BR>
+    <INPUT type="image" src="/img/button.gif" WIDTH="60" HEIGHT="30">
+</FORM>
+
+<div class="collection">
+    <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
+    <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
+    <a href="#!" class="collection-item">Alan</a>
+    <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
+</div>
+
+<ul class="collection">
+    <li class="collection-item">Alvin</li>
+    <li class="collection-item">Alvin</li>
+    <li class="collection-item">Alvin</li>
+    <li class="collection-item">Alvin</li>
+</ul>
+
+<ul class="collection">
+    <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+</ul>
+
+</body>
+</html>

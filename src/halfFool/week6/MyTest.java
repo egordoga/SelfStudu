@@ -29,7 +29,6 @@ public class MyTest {
                 dataDB.initList();
                 Object[] listArr =  dataDB.list.toArray();
 
-                System.out.println(Arrays.toString(listArr));
 
                /* String json = "";
                 for (Data data : dataDB.list) {
@@ -37,7 +36,7 @@ public class MyTest {
                 }*/
                 String json = gson.toJson(listArr);
 
-                System.out.println(json);
+
                    byte[] bytes = json.getBytes();
                     exc.sendResponseHeaders(200, bytes.length);
                     os.write(bytes);

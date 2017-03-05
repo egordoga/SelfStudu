@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+<div id="results"></div>
+
+<script>
+    $.ajax({
+  dataType: 'json',
+  url: 'http://localhost:8000',
+  success: function(jsondata){
+    $('#results').html('Name = ' + jsondata.name + ', Val = ' + jsondata.val + ', Phone = ' +jsondata.phone);
+  }
+});
+
+</script>
+
+</body>
+</html>

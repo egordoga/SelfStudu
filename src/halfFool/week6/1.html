@@ -1,4 +1,3 @@
-
 <!--$.ajax({-->
 
 <!DOCTYPE html>
@@ -25,24 +24,40 @@
 
 <div id="results"></div>
 <div id="sss"></div>
-
+<div id="test"></div>
 
 
 <script>
-$.ajax({
-  type: 'POST',
-  url: 'http://localhost:8000',
-  data: 'Nu hot chto-to',
-  success: function(data){
-   $('#results').html(data);
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8000',
+        data: 'Nu hot chto-to',
+        success: function (data) {
+            $('#results').html(data);
 
-    var ss = data;
-    //var arr = ss.split("%");
-//document.getElementById('sss').innerHTML = JSON.parse(arr[3]).name;
-document.getElementById('sss').innerHTML = ss;
+            var arr = JSON.parse(data);
 
-}
-});
+        }
+    });
+
+    (function () {
+
+        //var arr = JSON.parse(data);
+
+
+        elem = document.getElementById('test'), i = -1;
+
+        return function () {
+            if (++i < arr.length) {
+                elem.innerHTML = arr[i].name + ' ' + arr[i].value + ' ' + arr[i].phone + '<br>' + elem.innerHTML;
+
+            }
+        }();
+
+    })();
+
+    //document.getElementById('sss').innerHTML = ss;
+
 </script>
 
 </body>

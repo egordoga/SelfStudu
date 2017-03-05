@@ -28,7 +28,7 @@ public class DataDB {
         list.add(data6);
     }
 
-    public void toJSON(){
+    public void tJSON(){
 
         //String json = gson.toJson();
         for (Data data : list) {
