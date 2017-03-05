@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+</head>
+
+<body>
+
+<!--<form action="/" id="searchForm">
+
+    <input type="text" name="s" placeholder="Search..." />
+
+    <input type="submit" value="Search" />
+
+</form>-->
+
+<!-- результат будет отображён в этом div -->
+
+<!--<div id="results"></div>-->
+<div id="test"></div>
+
+
+<script>
+var arr = [];
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8000',
+        data: 'Nu hot chto-to',
+        success: function (data) {
+            $('#results').html(data);
+
+             arr = JSON.parse(data);
+
+             for (var i=0; i < arr.length; i++)
+             var str = arr[i].name + ' ' + arr[i].value + '      ' + arr[i].phone + '<br>' + str;
+             $( "#test" ).append( str );
+
+             var output = document.getElementById('test');
+<!-- for(var i=0; i < arr.length; i++)
+  output = output + "exampleArray[" + i + "]=" +
+  arr[i].name + ' ' + arr[i].value + '      ' + arr[i].phone + "\n";
+  //elem.innerHTML = arr[i].name + ' ' + arr[i].value + '     ' + arr[i].phone + '<br>' + elem.innerHTML;
+alert(output);
+
+        }
+    });
+
+    (function () {
+
+        elem = document.getElementById('test'), i = -1;
+        return function () {
+            if (++i < arr.length) {
+                elem.innerHTML = arr[i].name + ' ' + arr[i].value + '     ' + arr[i].phone + '<br>' + elem.innerHTML;
+
+            }
+        }();
+-->
+    })();
+
+    //document.getElementById('sss').innerHTML = ss;
+
+
+
+</script>
+
+</body>
+
+</html>

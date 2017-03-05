@@ -22,12 +22,13 @@
 
 <!-- результат будет отображён в этом div -->
 
-<div id="results"></div>
-<div id="sss"></div>
+<!--<div id="results"></div>-->
 <div id="test"></div>
 
 
 <script>
+//var arr = [];
+
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8000',
@@ -35,28 +36,14 @@
         success: function (data) {
             $('#results').html(data);
 
-            var arr = JSON.parse(data);
-
-        }
-    });
-
-    (function () {
-
-        //var arr = JSON.parse(data);
-
-
-        elem = document.getElementById('test'), i = -1;
-
-        return function () {
-            if (++i < arr.length) {
-                elem.innerHTML = arr[i].name + ' ' + arr[i].value + ' ' + arr[i].phone + '<br>' + elem.innerHTML;
+             var arr = JSON.parse(data);
+             var str = "";
+             for (var i=0; i < arr.length; i++)
+              str = str + arr[i].name + ' ' + arr[i].value + '      ' + arr[i].phone + '<br>' ;
+             $( "#test" ).append( str );
 
             }
-        }();
-
-    })();
-
-    //document.getElementById('sss').innerHTML = ss;
+ });
 
 </script>
 
