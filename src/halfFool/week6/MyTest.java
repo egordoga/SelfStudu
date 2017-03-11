@@ -27,7 +27,8 @@ public class MyTest {
                 OutputStream os = exc.getResponseBody();
 
                 dataDB.initList();
-                Object[] listArr =  dataDB.list.toArray();
+                Object[] listArr =  null;
+                listArr = dataDB.list.toArray();
 
 
                /* String json = "";

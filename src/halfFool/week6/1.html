@@ -8,8 +8,20 @@
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <link rel="stylesheet" href="resources/css/materialize.css" media="screen" title="no title">
+    <link rel="stylesheet" href="resources/css/materialize.min.css">
 
 </head>
+
+<header>
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Hello</a>
+                <h5 class="right" id="usernameTop"></h5>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <body>
 
@@ -19,6 +31,12 @@
 
 <!--<div id="results"></div>-->
 <div id="test"></div>
+<!--<div class="collection">
+    <a href="#!" class="collection-item">Alvin</a>
+    <a href="#!" class="collection-item active">Alvin</a>
+    <a href="#!" class="collection-item">Alvin</a>
+    <a href="#!" class="collection-item">Alvin</a>
+</div>-->
 
 
 <script>
@@ -32,15 +50,21 @@
             $('#results').html(data);
 
              var arr = JSON.parse(data);
-             var str = "";
+             var str = '<ul class="collection">';
              for (var i=0; i < arr.length; i++)
-              str = str + arr[i].name + ' ' + arr[i].value + '      ' + arr[i].phone + '<br>' ;
+              str = str + '<li class="collection-item"><div>'
+                  + arr[i].name + ' ' + arr[i].value + '_____' + arr[i].phone
+                  + '<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>' ;
              $( "#test" ).append( str );
 
             }
  });
 
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt3T4Fneih9ICsGCxFky6vzIVHHdj93rM&callback=myMap"></script>
+<script src="resources/js/materialize.js"></script>
+<script src="resources/js/materialize.min.js"></script>
 
 </body>
 
